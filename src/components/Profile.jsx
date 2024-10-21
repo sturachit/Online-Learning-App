@@ -14,49 +14,25 @@ const Profile = () => {
     }, []);
 
     return (
-        <div 
-            className="profile-container" 
-            style={{ 
-                padding: '20px', 
-                backgroundColor: '#f8f9fa', 
-                borderRadius: '15px', 
-                maxWidth: '500px', 
-                margin: '0 auto', 
-                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' 
-            }}
-        >
-            <h2 style={{ color: '#333', marginBottom: '20px', textAlign: 'center' }}>Your Profile</h2>
+        <div className="max-w-md mx-auto p-6 bg-gray-100 rounded-xl shadow-lg">
+            <h2 className="text-gray-800 text-2xl font-semibold mb-4 text-center">Your Profile</h2>
             <form>
-                <div className="mb-3">
-                    <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>Name</label>
+                <div className="mb-4">
+                    <label className="block mb-1 font-bold text-gray-700">Name</label>
                     <input 
                         type="text" 
-                        className="form-control" 
+                        className="form-control w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" 
                         value={user.name} 
                         readOnly 
-                        style={{
-                            padding: '10px', 
-                            borderRadius: '5px', 
-                            border: '1px solid #ccc', 
-                            backgroundColor: '#ffffff', 
-                            color: '#555'
-                        }} 
                     />
                 </div>
-                <div className="mb-3">
-                    <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>Email</label>
+                <div className="mb-4">
+                    <label className="block mb-1 font-bold text-gray-700">Email</label>
                     <input 
                         type="email" 
-                        className="form-control" 
+                        className="form-control w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" 
                         value={user.email} 
                         readOnly 
-                        style={{
-                            padding: '10px', 
-                            borderRadius: '5px', 
-                            border: '1px solid #ccc', 
-                            backgroundColor: '#ffffff', 
-                            color: '#555'
-                        }} 
                     />
                 </div>
             </form>

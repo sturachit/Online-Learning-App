@@ -14,40 +14,20 @@ const NotificationPanel = () => {
     }, []);
 
     return (
-        <div 
-            className="notification-container" 
-            style={{ 
-                padding: '20px', 
-                backgroundColor: '#f8f9fa', 
-                borderRadius: '15px', 
-                maxWidth: '600px', 
-                margin: '0 auto', 
-                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' 
-            }}
-        >
-            <h2 style={{ color: '#333', marginBottom: '20px', textAlign: 'center' }}>Notifications</h2>
-            <ul className="list-group" style={{ listStyleType: 'none', padding: 0 }}>
+        <div className="max-w-lg mx-auto p-6 bg-gray-100 rounded-xl shadow-lg">
+            <h2 className="text-gray-800 text-2xl font-semibold mb-4 text-center">Notifications</h2>
+            <ul className="list-none p-0">
                 {notifications.length > 0 ? (
                     notifications.map((notification, index) => (
                         <li 
                             key={index} 
-                            className="list-group-item" 
-                            style={{ 
-                                padding: '15px', 
-                                backgroundColor: '#ffffff', 
-                                marginBottom: '10px', 
-                                borderRadius: '10px', 
-                                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', 
-                                transition: 'background-color 0.3s ease'
-                            }}
-                            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#e0f7fa'}
-                            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#ffffff'}
+                            className="bg-white mb-3 p-4 rounded-lg shadow hover:bg-blue-50 transition duration-300"
                         >
                             {notification.message}
                         </li>
                     ))
                 ) : (
-                    <li style={{ padding: '15px', textAlign: 'center', color: '#999' }}>
+                    <li className="p-4 text-center text-gray-400">
                         No notifications available
                     </li>
                 )}

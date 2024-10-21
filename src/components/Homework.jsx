@@ -16,7 +16,6 @@ const Homework = () => {
     const [newHomework, setNewHomework] = useState({ title: '', dueDate: '' });
     const [newSubject, setNewSubject] = useState('');
 
-    // Add a new subject
     const addSubject = () => {
         if (newSubject && !homeworkData[newSubject]) {
             setHomeworkData((prevData) => ({
@@ -27,7 +26,6 @@ const Homework = () => {
         }
     };
 
-    // Add a new homework
     const addHomework = () => {
         if (newHomework.title && newHomework.dueDate && selectedSubject) {
             setHomeworkData((prevData) => ({
@@ -41,7 +39,6 @@ const Homework = () => {
         }
     };
 
-    // Delete a homework item
     const deleteHomework = (index) => {
         const updatedHomework = homeworkData[selectedSubject].filter((_, i) => i !== index);
         setHomeworkData((prevData) => ({
@@ -50,7 +47,6 @@ const Homework = () => {
         }));
     };
 
-    // Edit a homework item (toggle completion status)
     const toggleComplete = (index) => {
         const updatedHomework = homeworkData[selectedSubject].map((item, i) =>
             i === index ? { ...item, isCompleted: !item.isCompleted } : item

@@ -21,19 +21,16 @@ const Lecture = () => {
         videoUrl: ''
     });
 
-    // Add a new lecture
     const addLecture = () => {
         setLectures([...lectures, newLecture]);
         setNewLecture({ title: '', duration: '', timing: '', description: '', videoUrl: '' });
     };
 
-    // Delete a lecture
     const deleteLecture = (index) => {
         const updatedLectures = lectures.filter((_, i) => i !== index);
         setLectures(updatedLectures);
     };
 
-    // Edit a lecture (for simplicity, toggle logic here can be expanded as needed)
     const editLecture = (index) => {
         const editedLecture = { ...lectures[index], title: `${lectures[index].title} (Edited)` };
         const updatedLectures = [...lectures];

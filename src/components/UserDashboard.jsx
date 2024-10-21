@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 const Dashboard = () => {
     const [userStats] = useState({
-        completedCourses: 5,
-        enrolledCourses: 10,
-        totalHoursWatched: 25,
+        completedCourses: 1,
+        enrolledCourses: 5,
+        totalHoursWatched: 10,
     });
 
     const [activities] = useState([
@@ -18,15 +18,7 @@ const Dashboard = () => {
         { id: 2, title: 'Watch the next lecture on React Hooks', dueDate: '2024-10-21' },
     ]);
 
-    const [newCourses] = useState([
-        { id: 1, title: 'Web Development Bootcamp', description: 'Learn full-stack web development from scratch.', duration: '3 months' },
-        { id: 2, title: 'Data Science with Python', description: 'Dive into data analysis and machine learning.', duration: '2 months' },
-        { id: 3, title: 'Digital Marketing Masterclass', description: 'Understand the ins and outs of digital marketing.', duration: '1.5 months' },
-    ]);
-
-    const handleEnroll = (courseTitle) => {
-        alert(`Enrolled in ${courseTitle}`);
-    };
+    
 
     return (
         <div className="max-w-5xl mx-auto p-6 bg-gradient-to-r from-red-500 to-green-600 rounded-2xl shadow-lg">

@@ -23,99 +23,49 @@ const Schedule = () => {
     };
 
     return (
-        <div 
-            style={{ 
-                padding: '20px', 
-                backgroundColor: '#f8f9fa', 
-                borderRadius: '15px', 
-                maxWidth: '500px', 
-                margin: '0 auto', 
-                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' 
-            }}
-        >
-            <h2 style={{ color: "grey", textAlign: 'center' }}>Schedule</h2>
-            <form onSubmit={handleAddSchedule} style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+        <div className="max-w-lg mx-auto p-6 bg-gray-100 rounded-xl shadow-lg">
+            <h2 className="text-gray-800 text-xl font-semibold text-center">Schedule</h2>
+            <form onSubmit={handleAddSchedule} className="flex flex-col gap-4">
                 <input
                     type="text"
                     placeholder="Subject"
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
                     required
-                    style={{
-                        padding: '10px', 
-                        borderRadius: '5px', 
-                        border: '1px solid #ccc', 
-                        backgroundColor: '#ffffff'
-                    }}
+                    className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <input
                     type="date"
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
                     required
-                    style={{
-                        padding: '10px', 
-                        borderRadius: '5px', 
-                        border: '1px solid #ccc', 
-                        backgroundColor: '#ffffff'
-                    }}
+                    className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <input
                     type="time"
                     value={time}
                     onChange={(e) => setTime(e.target.value)}
                     required
-                    style={{
-                        padding: '10px', 
-                        borderRadius: '5px', 
-                        border: '1px solid #ccc', 
-                        backgroundColor: '#ffffff'
-                    }}
+                    className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <button 
                     type="submit" 
-                    style={{ 
-                        padding: '10px', 
-                        borderRadius: '5px', 
-                        border: 'none', 
-                        backgroundColor: '#4a90e2', 
-                        color: '#fff', 
-                        cursor: 'pointer', 
-                        transition: 'background-color 0.3s' 
-                    }}
-                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#4a90e2'}
-                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#4a90e2'}
+                    className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition-colors"
                 >
                     Add Schedule
                 </button>
             </form>
 
-            <h3 style={{ color: "grey", marginTop: '20px' }}>My Schedule</h3>
-            <ul style={{ listStyleType: 'none', padding: 0 }}>
+            <h3 className="text-gray-800 text-lg mt-6">My Schedule</h3>
+            <ul className="list-none p-0">
                 {scheduleItems.map((item, index) => (
-                    <li key={index} style={{ 
-                        display: 'flex', 
-                        justifyContent: 'space-between', 
-                        alignItems: 'center', 
-                        padding: '10px', 
-                        border: '1px solid #ddd', 
-                        borderRadius: '5px', 
-                        marginBottom: '10px', 
-                        backgroundColor: '#ffffff' 
-                    }}>
+                    <li key={index} className="flex justify-between items-center p-4 border border-gray-200 rounded-lg mb-2 bg-white shadow">
                         <span>
                             <strong>{item.subject}</strong> - {item.date} at {item.time}
                         </span>
                         <button 
                             onClick={() => handleDeleteSchedule(index)} 
-                            style={{ 
-                                backgroundColor: 'red', 
-                                color: 'white', 
-                                border: 'none', 
-                                padding: '5px 10px', 
-                                borderRadius: '5px', 
-                                cursor: 'pointer' 
-                            }}
+                            className="bg-red-500 text-white p-2 rounded hover:bg-red-600 transition-colors"
                         >
                             Delete
                         </button>

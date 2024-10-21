@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 
 const Messages = () => {
-    const initialMessages = [
-        
-       
-    ];
+    const initialMessages = [];
 
     const [messages, setMessages] = useState(initialMessages);
     const [newMessage, setNewMessage] = useState({ sender: '', content: '' });
